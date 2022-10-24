@@ -53,6 +53,7 @@ body {
 .settngs-box .option-box h4 {
   margin: 0;
   color: #666;
+  font-size: 14px;
 }
 .settngs-box .option-box .colors-list {
   list-style: none;
@@ -96,6 +97,24 @@ body {
   background-color: #8bc34a;
 }
 
+.settngs-box .random-background .yes,
+.settngs-box .random-background .no {
+  width: 50px;
+  background-color: #2196f3;
+  color: #fff;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.settngs-box .random-background span.active {
+  opacity: 1;
+}
 
 /* End Settings Box */
 

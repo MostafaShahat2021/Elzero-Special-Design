@@ -1,10 +1,10 @@
 // Check if ther is local storage color option
 let mainColor = localStorage.getItem('color-option');
-if(mainColor !== null){
+if (mainColor !== null) {
     // console.log('local storage is not empty you can set it on root now');
     // console.log(localStorage.getItem('color-option'));
     document.documentElement.style.setProperty('--main-color', mainColor);
-    
+
     // Remove Active Class From All colors List Item
     document.querySelectorAll('.colors-list li').forEach(element => {
         element.classList.remove('active');
@@ -36,7 +36,7 @@ colorsLi.forEach(li => {
         // Set color on Root
         // document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
         document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
-        
+
         // Set Color On localStorage
         localStorage.setItem('color-option', e.target.dataset.color);
 
@@ -46,6 +46,18 @@ colorsLi.forEach(li => {
             // console.log(element);
         });
         // Add Ative Class to the clicked li (e.target)
+        e.target.classList.add('active');
+    });
+});
+
+// Switch Random Background option
+const randomBackEl = document.querySelectorAll('.random-background span');
+// console.log(randomBackEl);
+randomBackEl.forEach(span => {
+    span.addEventListener('click', (e) => {
+        e.target.parentElement.querySelectorAll('.active').forEach(element => {
+            element.classList.remove('active');
+        });
         e.target.classList.add('active');
     });
 });
