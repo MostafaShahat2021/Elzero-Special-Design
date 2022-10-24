@@ -74,6 +74,6 @@ setInterval(() => {
     // console.log(randomNumber);
 
     // change background img url
-    landingPage.style.backgroundImage = `url("/img/${imgsArray[randomNumber]}")`;
+    landingPage.style.backgroundImage = `url("img/${imgsArray[randomNumber]}")`;
 }, 3000)
 
