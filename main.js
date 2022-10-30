@@ -61,7 +61,7 @@ let backgroundLocalItem = localStorage.getItem('background_option');
 if (backgroundLocalItem !== null) {
     // console.log(backgroundLocalItem);
     // console.log(typeof backgroundLocalItem);//true is STRING Not Bolean
-    if (backgroundLocalItem === 'true'){
+    if (backgroundLocalItem === 'true') {
         backgroundOption = true;
     } else {
         backgroundOption = false;
@@ -121,9 +121,9 @@ function randomizeImgs() {
             // get random number
             let randomNumber = Math.floor(Math.random() * imgsArray.length);
             // console.log(randomNumber);
-        
+
             // change background img url
             landingPage.style.backgroundImage = `url("img/${imgsArray[randomNumber]}")`;
-        }, 1000)
+        }, 3000)
     }
 }
