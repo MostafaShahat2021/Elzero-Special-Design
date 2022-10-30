@@ -32,7 +32,7 @@ const colorsLi = document.querySelectorAll('.colors-list li');
 // console.log(colorsLi);
 colorsLi.forEach(li => {
     li.addEventListener('click', (e) => {
-        console.log(e.target.dataset.color);
+        // console.log(e.target.dataset.color);
         // Set color on Root
         // document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
         document.documentElement.style.setProperty('--main-color', e.target.dataset.color);
@@ -56,6 +56,32 @@ let backgroundOption = true;
 // variable to control the background interval
 let backgroundInterval;
 
+//Check if localStorage random background is not epmty
+let backgroundLocalItem = localStorage.getItem('background_option');
+if (backgroundLocalItem !== null) {
+    // console.log(backgroundLocalItem);
+    // console.log(typeof backgroundLocalItem);//true is STRING Not Bolean
+    if (backgroundLocalItem === 'true'){
+        backgroundOption = true;
+    } else {
+        backgroundOption = false;
+    }
+
+    console.log(backgroundLocalItem);
+
+    // Remove Active class from all spans
+    document.querySelectorAll('.random-background span').forEach(element => {
+        console.log(element);
+        element.classList.remove('active');
+    });
+
+    if (backgroundLocalItem === 'true') {
+        document.querySelector('.random-background .yes').classList.add('active')
+    } else {
+        document.querySelector('.random-background .no').classList.add('active')
+    }
+
+}
 // Switch Random Background option
 const randomBackEl = document.querySelectorAll('.random-background span');
 // console.log(randomBackEl);
@@ -70,11 +96,14 @@ randomBackEl.forEach(span => {
             backgroundOption = true;
             // console.log(backgroundOption);
             randomizeImgs();
+
+            localStorage.setItem('background_option', true)
         } else {
             // console.log('No');
             backgroundOption = false;
             // console.log(backgroundOption);
             clearInterval(backgroundInterval);
+            localStorage.setItem('background_option', false)
         }
     });
 });
