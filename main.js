@@ -67,11 +67,11 @@ if (backgroundLocalItem !== null) {
         backgroundOption = false;
     }
 
-    console.log(backgroundLocalItem);
+    // console.log(backgroundLocalItem);
 
     // Remove Active class from all spans
     document.querySelectorAll('.random-background span').forEach(element => {
-        console.log(element);
+        // console.log(element);
         element.classList.remove('active');
     });
 
@@ -127,3 +127,34 @@ function randomizeImgs() {
         }, 3000)
     }
 }
+randomizeImgs()
+
+// SKILLS
+// target skills selector
+let ourSkills = document.querySelector(".skills");
+
+window.onscroll = function(){
+    // skill offset top
+    let skillsOffsetTop = ourSkills.offsetTop;
+    // console.log(skillsOffsetTop);
+
+    // skills outer height
+    let skillsOuterHeight = ourSkills.offsetHeight;
+    // console.log(skillsOuterHeight) ;
+
+    // Window height
+    let windowHeight = this.innerHeight;
+    // console.log(windowHeight);
+
+    // Window ScrollTop
+    let windowScrollTop = this.pageYOffset;
+    // console.log(windowScrollTop);
+
+    if(windowScrollTop >= (skillsOffsetTop + skillsOuterHeight - windowHeight)){
+        // this.console.log('Skills Section Reached')
+        let allSkills = document.querySelectorAll(".skills-box .skill-progress span")
+        allSkills.forEach(skill => {
+            skill.style.width = skill.dataset.progress;
+        });
+    }
+};
