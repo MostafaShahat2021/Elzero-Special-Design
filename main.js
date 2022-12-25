@@ -112,7 +112,7 @@ randomBackEl.forEach(span => {
 let landingPage = document.querySelector('.landing-page');
 
 // Array of imgs
-let imgsArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
+let imgsArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', 'about.jpg'];
 
 // function to randomize imgs
 function randomizeImgs() {
