@@ -354,3 +354,121 @@ body {
   max-width: 100%;
 }
 /* End our Gallaery */
+
+/* start time line */
+.timeLine{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+}
+.timeLine .timeLine-contenet{
+  position: relative;
+  overflow: hidden;
+}
+/* .cont{
+  display: flex;
+  justify-content: space-between;
+  text-align: center; 
+} */
+
+.timeLine .timeLine-contenet:before{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: var(--main-color);
+  left: 50%;
+  margin-left: -1px;
+  top: 0;
+}
+
+.timeLine .timeLine-contenet .year{
+  margin: 20px auto;
+  width: 50px;
+  background-color: var(--main-color);
+  position: relative;
+  z-index: 2;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  padding: 2px 5px;
+}
+
+.timeLine .timeLine-contenet .left,
+.timeLine .timeLine-contenet .right{
+  width: calc(50% - 25px);
+  margin-bottom: 40px;
+  position: relative; 
+}
+
+.timeLine .timeLine-contenet .left{
+  float: left;
+}
+
+.timeLine .timeLine-contenet .left:before{
+  right: -35px;
+}
+.timeLine .timeLine-contenet .right{
+  float: right;
+}
+.timeLine .timeLine-contenet .right:before{
+  left: -35px;
+}
+
+.timeLine .timeLine-contenet .left:before,
+.timeLine .timeLine-contenet .right:before{
+  content: '';
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border: 3px solid var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 20px;
+}
+
+.clearFix{
+  clear: both;
+}
+
+.timeLine .timeLine-contenet .left .content:before{
+  content: '';
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent transparent #fff;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: -20px;
+  top: 20px;
+}
+.timeLine .timeLine-contenet .right .content:before{
+  content: '';
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent #fff transparent transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: -20px;
+  top: 20px;
+}
+
+
+.timeLine .timeLine-contenet .content{
+  padding: 20px;
+  background-color: #fff;
+}
+.timeLine .timeLine-contenet .content h3{
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.timeLine .timeLine-contenet .content p{
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* end time line */
