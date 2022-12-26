@@ -325,12 +325,31 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: var(--main-color);
+  background-color: #ccc;
   padding: 5px;
   border: 1px solid #ccc;
   z-index: 10001;
+  border-radius: 10px;
+}
+.popup-box h3{
+  font-weight: bold;
+  text-align: center;
+  color: var(--main-color);
+  margin: 0 0 20px;
 }
 
+.close-btn{
+  position:absolute;
+  background-color: var(--main-color);
+  color: #eee;
+  font-weight: bold;
+  font-size: larger;
+  padding: 10px;
+  border-radius: 50%;
+  top:-15px;
+  right:-15px;
+  cursor: pointer;
+}
 .popup-box img{
   max-width: 100%;
 }
