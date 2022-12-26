@@ -158,3 +158,32 @@ window.onscroll = function(){
         });
     }
 };
+
+// creat popup with image 
+let ourGallery = document.querySelectorAll('.gallery img');
+ourGallery.forEach(img =>{
+    img.addEventListener("click", (e)=>{
+    // creat overlay element
+        let overlay = document.createElement('div');
+    // Add class to overlay
+        overlay.className = "popup-overlay";
+    // append overlay to body
+        document.body.appendChild(overlay);
+    
+    // creat popup box
+        let popupBox = document.createElement('div');
+    // Add class to popupBox
+        popupBox.className = "popup-box";
+    
+    // creat the Image
+        let popupImage = document.createElement('img');
+    // Set img src
+        popupImage.src = img.src;
+    // Add image to popup box
+        popupBox.appendChild(popupImage);
+    // append popup box to body
+        document.body.appendChild(popupBox);
+
+    });
+
+});
